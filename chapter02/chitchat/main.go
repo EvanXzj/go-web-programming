@@ -16,6 +16,8 @@ func main() {
 	// all route patterns matched here
 	// route handler functions defined in other files
 	//
+
+	// defined in route_main.go
 	mux.HandleFunc("/", index)
 	mux.HandleFunc("/err", err)
 
