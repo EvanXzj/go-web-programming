@@ -25,9 +25,9 @@ func signup(writer http.ResponseWriter, request *http.Request) {
 		danger(err, "Cannot parse form")
 	}
 	user := data.User{
-		Name: request.PostFromValue("name"),
-		Email: request.PostFromValue("email"),
-		Password: request.PostFromValue("password")
+		Name:     request.PostFromValue("name"),
+		Email:    request.PostFromValue("email"),
+		Password: request.PostFromValue("password"),
 	}
 	if err := user.Create(); err != nil {
 		danger(err, "Cannot create user")
@@ -50,8 +50,8 @@ func authenticate(writer http.ResponseWriter, request *http.Request) {
 			danger(err, "Cannot create session")
 		}
 		cookie := http.Cookie{
-			Name: "_cookie",
-			Value: session.Uuid,
+			Name:     "_cookie",
+			Value:    session.Uuid,
 			HttpOnly: true,
 		}
 		http.SetCookie(writer, &cookie)

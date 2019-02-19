@@ -12,11 +12,11 @@ import (
 )
 
 type Configuration struct {
-	Address string
-	ReadTimeout int64
+	Address      string
+	ReadTimeout  int64
 	WriteTimeout int64
-	Static string
-	Version string
+	Static       string
+	Version      string
 }
 
 var config Configuration
