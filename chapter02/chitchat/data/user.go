@@ -63,7 +63,7 @@ func (session *Session) DeleteByUUID() (err error) {
 	}
 	defer stmt.Close()
 
-	_, err = stmt.Exec(session.uuid)
+	_, err = stmt.Exec(session.Uuid)
 	return
 }
 
@@ -121,7 +121,7 @@ func (user *User) Update() (err error) {
 	}
 	defer stmt.Close()
 
-	_, err = stmt.Exec(user.Id, user.Name, User.Email)
+	_, err = stmt.Exec(user.Id, user.Name, user.Email)
 	return
 }
 

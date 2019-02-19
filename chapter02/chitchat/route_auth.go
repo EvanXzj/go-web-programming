@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"github.com/EvanXzj/go-web-programming/chapter02/chitchat/data"
 )
 
 // GET /login
@@ -19,15 +20,15 @@ func signup(writer http.ResponseWriter, request *http.Request) {
 
 // POST /signup
 // Create the user accoun
-func signup(writer http.ResponseWriter, request *http.Request) {
+func signupAccount(writer http.ResponseWriter, request *http.Request) {
 	err := request.ParseForm()
 	if err != nil {
 		danger(err, "Cannot parse form")
 	}
 	user := data.User{
-		Name:     request.PostFromValue("name"),
-		Email:    request.PostFromValue("email"),
-		Password: request.PostFromValue("password"),
+		Name:     request.PostFormValue("name"),
+		Email:    request.PostFormValue("email"),
+		Password: request.PostFormValue("password"),
 	}
 	if err := user.Create(); err != nil {
 		danger(err, "Cannot create user")
@@ -39,12 +40,12 @@ func signup(writer http.ResponseWriter, request *http.Request) {
 // Authenticate the user given the email and password
 func authenticate(writer http.ResponseWriter, request *http.Request) {
 	err := request.ParseForm()
-	user, err := data.UserByEmail(request.PostFromValue("email"))
+	user, err := data.UserByEmail(request.PostFormValue("email"))
 	if err != nil {
 		danger(err, "Cannot find user")
 	}
 
-	if user.Password == data.Encrypt(request.PostFromValue("password")) {
+	if user.Password == data.Encrypt(request.PostFormValue("password")) {
 		session, err := user.CreateSession()
 		if err != nil {
 			danger(err, "Cannot create session")

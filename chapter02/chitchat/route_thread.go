@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"github.com/EvanXzj/go-web-programming/chapter02/chitchat/data"
 )
 
 // GET /threads/new

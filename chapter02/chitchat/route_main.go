@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"github.com/EvanXzj/go-web-programming/chapter02/chitchat/data"
 )
 
 // GET /err?msg=
