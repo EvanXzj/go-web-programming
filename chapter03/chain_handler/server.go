@@ -27,9 +27,9 @@ func protect(h http.Handler) http.Handler {
 
 func main() {
 	server := http.Server{
-        Addr: "127.0.0.1:3000",
-    }
-    hello := HelloHandler{}
-    http.Handle("/hello", protect(log(hello)))
-    server.ListenAndServe()
+		Addr: "127.0.0.1:3000",
+	}
+	hello := HelloHandler{}
+	http.Handle("/hello", protect(log(hello)))
+	server.ListenAndServe()
 }

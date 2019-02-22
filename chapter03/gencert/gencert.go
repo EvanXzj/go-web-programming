@@ -16,9 +16,9 @@ func main() {
 	max := new(big.Int).Lsh(big.NewInt(1), 128)
 	serialNumber, _ := rand.Int(rand.Reader, max)
 	subject := pkix.Name{
-		Organization: []string{"Manning Publications Co."},
+		Organization:       []string{"Manning Publications Co."},
 		OrganizationalUnit: []string{"Books"},
-		CommonName: "Go Web Programming",
+		CommonName:         "Go Web Programming",
 	}
 
 	template := x509.Certificate{
@@ -40,5 +40,5 @@ func main() {
 
 	keyOut, _ := os.Create("key.pem")
 	pem.Encode(keyOut, &pem.Block{Type: "RSA PRIVATE KEY", Bytes: x509.MarshalPKCS1PrivateKey(pk)})
-	keyOut.Close(
+	keyOut.Close()
 }

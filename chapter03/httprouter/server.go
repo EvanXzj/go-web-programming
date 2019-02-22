@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 	"github.com/julienschmidt/httprouter"
+	"net/http"
 )
 
 func hello(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
@@ -15,8 +15,8 @@ func main() {
 	mux.GET("/hello/:name", hello)
 
 	server := http.Server{
-        Addr:    "127.0.0.1:3000",
-        Handler: mux,
+		Addr:    "127.0.0.1:3000",
+		Handler: mux,
 	}
-    server.ListenAndServe()
+	server.ListenAndServe()
 }

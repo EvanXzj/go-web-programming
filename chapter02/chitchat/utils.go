@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/EvanXzj/go-web-programming/chapter02/chitchat/data"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 	"strings"
-	"github.com/EvanXzj/go-web-programming/chapter02/chitchat/data"
 )
 
 type Configuration struct {

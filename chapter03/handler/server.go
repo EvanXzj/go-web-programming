@@ -14,7 +14,7 @@ func (h *MyHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func main() {
 	handler := MyHandler{}
 	server := http.Server{
-		Addr: "127.0.0.1:3000",
+		Addr:    "127.0.0.1:3000",
 		Handler: &handler,
 	}
 	server.ListenAndServe()

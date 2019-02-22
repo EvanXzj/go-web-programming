@@ -12,7 +12,6 @@ func body(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, string(body))
 }
 
-
 func main() {
 	server := http.Server{
 		Addr: "127.0.0.1:3000",

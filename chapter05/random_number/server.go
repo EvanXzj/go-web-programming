@@ -1,10 +1,10 @@
 package main
 
 import (
-	"time"
+	"html/template"
 	"math/rand"
 	"net/http"
-	"html/template"
+	"time"
 )
 
 func process(w http.ResponseWriter, r *http.Request) {

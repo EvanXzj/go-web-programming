@@ -7,7 +7,7 @@ import (
 
 func headers(w http.ResponseWriter, r *http.Request) {
 	h := r.Header
-	ae := r.Header["Accept-Encoding"]	// map of strings
+	ae := r.Header["Accept-Encoding"] // map of strings
 	fmt.Printf("%T - %v\n", ae, ae)
 	ae2 := r.Header.Get("Accept-Encoding") // string类型
 	fmt.Printf("%T - %v\n", ae2, ae2)
