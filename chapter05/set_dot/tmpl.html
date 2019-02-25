@@ -5,10 +5,22 @@
     <title>Go Web Programming</title>
   </head>
   <body>
+	 <h2>Version 1</h2>
 	<div> The dot is {{ . }}</div>
 	<div>
 		{{ with "world" }}
 		Now the dot is set to {{ . }}
+		{{ end }}
+	</div>
+	<div>The dot is set {{ . }} again</div>
+
+	<h2>Version 2</h2>
+	<div> The dot is {{ . }}</div>
+	<div>
+		{{ with "" }}
+		Now the dot is set to {{ . }}
+		{{ else }}
+		The dot is still {{ . }}
 		{{ end }}
 	</div>
 	<div>The dot is set {{ . }} again</div>
