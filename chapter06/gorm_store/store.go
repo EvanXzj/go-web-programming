@@ -8,18 +8,18 @@ import (
 )
 
 type Post struct {
-	Id int
-	Content string
-	Author string `sql:"not null"`
-	Comments []Comment
+	Id        int
+	Content   string
+	Author    string `sql:"not null"`
+	Comments  []Comment
 	CreatedAt time.Time
 }
 
 type Comment struct {
-	Id int
-	Content string
-	Author string `sql:"not null"`
-	PostId int
+	Id        int
+	Content   string
+	Author    string `sql:"not null"`
+	PostId    int
 	CreatedAt time.Time
 }
 
@@ -49,7 +49,7 @@ func main() {
 
 	// Get comments from a post
 	var readPost Post
-	Db.Where("author = $1", "Sau Sheong").First(&readPost)
+	Db.Where("author = $1", "Sau Sheong").First(&readPost) // 是根据Struct来判断哪个表？
 	var comments []Comment
 	Db.Model(&readPost).Related(&comments)
 	fmt.Println(comments[0])

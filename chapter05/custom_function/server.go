@@ -1,9 +1,9 @@
 package main
 
 import (
-	"time"
-	"net/http"
 	"html/template"
+	"net/http"
+	"time"
 )
 
 func formatDate(t time.Time) string {

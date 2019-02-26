@@ -1,15 +1,15 @@
 package main
 
 import (
-	"fmt"
 	"database/sql"
+	"fmt"
 	_ "github.com/lib/pq"
 )
 
 type Post struct {
-	Id int
+	Id      int
 	Content string
-	Author string
+	Author  string
 }
 
 var Db *sql.DB
@@ -81,7 +81,7 @@ func DeleteAll() (err error) {
 func main() {
 	post := Post{
 		Content: "Hello",
-		Author: "Chui",
+		Author:  "Chui",
 	}
 
 	// create a post
@@ -99,7 +99,7 @@ func main() {
 	readPost.Update()
 
 	// Get all Posts
-	posts, _  := Posts(10)
+	posts, _ := Posts(10)
 	fmt.Println(posts)
 
 	// Delete the post

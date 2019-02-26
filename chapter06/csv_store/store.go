@@ -2,15 +2,15 @@ package main
 
 import (
 	"encoding/csv"
-	"os"
 	"fmt"
+	"os"
 	"strconv"
 )
 
 type Post struct {
-	Id int
+	Id      int
 	Content string
-	Author string
+	Author  string
 }
 
 func main() {

@@ -8,17 +8,17 @@ import (
 )
 
 type Post struct {
-	Id int
-	Content string
-	Author string
+	Id       int
+	Content  string
+	Author   string
 	Comments []Comment
 }
 
 type Comment struct {
-	Id int
+	Id      int
 	Content string
-	Author string
-	Post *Post
+	Author  string
+	Post    *Post
 }
 
 var Db *sql.DB
@@ -82,4 +82,3 @@ func main() {
 	fmt.Println(readPost.Comments)         // [{1 Good post! Joe 0xc20802a1c0}]
 	fmt.Println(readPost.Comments[0].Post) // &{1 Hello World! Sau Sheong [{1 Good post! Joe 0xc20802a1c0}]}
 }
-

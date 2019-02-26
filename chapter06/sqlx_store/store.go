@@ -7,8 +7,8 @@ import (
 )
 
 type Post struct {
-	Id 	int
-	Content string
+	Id         int
+	Content    string
 	AuthorName string `db: author`
 }
 

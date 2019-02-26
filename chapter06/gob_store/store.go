@@ -1,16 +1,16 @@
 package main
 
 import (
-	"encoding/gob"
 	"bytes"
+	"encoding/gob"
 	"fmt"
 	"io/ioutil"
 )
 
 type Post struct {
-	Id int
+	Id      int
 	Content string
-	Author string
+	Author  string
 }
 
 func store(data interface{}, filename string) {
