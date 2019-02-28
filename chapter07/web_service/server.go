@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"path"
 	"strconv"
-	"fmt"
 )
 
 type Post struct {
@@ -75,9 +74,39 @@ func handlePost(w http.ResponseWriter, r *http.Request) (err error) {
 }
 
 func handlePut(w http.ResponseWriter, r *http.Request) (err error) {
-
+	id, err := strconv.Atoi(path.Base(r.URL.Path))
+	if err != nil {
+		return
+	}
+	post, err := retrieve(id)
+	if err != nil {
+		return
+	}
+	length := r.ContentLength
+	body := make([]byte, length)
+	r.Body.Read(body)
+	json.Unmarshal(body, &post)
+	err = post.update()
+	if err != nil {
+		return
+	}
+	w.WriteHeader(200)
+	return
 }
 
 func handleDelete(w http.ResponseWriter, r *http.Request) (err error) {
-
+	id, err := strconv.Atoi(path.Base(r.URL.Path))
+	if err != nil {
+		return
+	}
+	post, err := retrieve(id)
+	if err != nil {
+		return
+	}
+	err = post.delete()
+	if err != nil {
+		return
+	}
+	w.WriteHeader(200)
+	return
 }
