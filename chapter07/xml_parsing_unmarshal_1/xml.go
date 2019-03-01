@@ -1,22 +1,22 @@
 package main
 
 import (
-	"fmt"
 	"encoding/xml"
+	"fmt"
 	"io/ioutil"
 	"os"
 )
 
 type Post struct {
 	XMLName xml.Name `xml:"post"`
-	Id string `xml:"id,attr"`
-	Content string `xml:"content"`
-	Author Author `xml:"author"`
-	Xml string `xml:",innerxml"`
+	Id      string   `xml:"id,attr"`
+	Content string   `xml:"content"`
+	Author  Author   `xml:"author"`
+	Xml     string   `xml:",innerxml"`
 }
 
 type Author struct {
-	Id string `xml:"id,attr"`
+	Id   string `xml:"id,attr"`
 	Name string `xml:",chardata"`
 }
 

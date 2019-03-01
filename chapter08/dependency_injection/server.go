@@ -8,7 +8,6 @@ import (
 	"strconv"
 )
 
-
 func main() {
 	// connect to the Db
 	db, err := sql.Open("postgres", "user=gwp dbname=gwp password=gwp sslmode=disable")

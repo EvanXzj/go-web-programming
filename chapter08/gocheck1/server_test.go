@@ -8,7 +8,7 @@ import (
 	"testing"
 )
 
-type PostTestSuite struct {}
+type PostTestSuite struct{}
 
 func init() {
 	Suite(&PostTestSuite{})

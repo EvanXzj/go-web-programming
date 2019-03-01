@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
-	"testing"
 	"strings"
+	"testing"
 )
 
 func TestGetPost(t *testing.T) {
@@ -28,7 +28,7 @@ func TestGetPost(t *testing.T) {
 
 func TestPutPost(t *testing.T) {
 	mux := http.NewServeMux()
-  post := &FakePost{}
+	post := &FakePost{}
 	mux.HandleFunc("/post/", handleRequest(post))
 
 	writer := httptest.NewRecorder()
@@ -40,7 +40,7 @@ func TestPutPost(t *testing.T) {
 		t.Errorf("Response code is %v", writer.Code)
 	}
 
-  if post.Content != "Updated post" {
-    t.Error("Content is not correct", post.Content)
-  }
+	if post.Content != "Updated post" {
+		t.Error("Content is not correct", post.Content)
+	}
 }

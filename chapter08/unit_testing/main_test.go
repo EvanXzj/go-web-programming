@@ -41,7 +41,7 @@ func TestEncode(t *testing.T) {
 // Long running test case
 func TestLongRunningTest(t *testing.T) {
 	if testing.Short() {
-	  t.Skip("Skipping long running test in short mode")
+		t.Skip("Skipping long running test in short mode")
 	}
 	time.Sleep(10 * time.Second)
 }

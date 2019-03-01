@@ -1,28 +1,28 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	"io/ioutil"
 	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"os"
 )
 
 type Post struct {
-	Id int `json:"id"`
-	Content string `json:"content"`
-	Author Author `json:"author"`
+	Id       int       `json:"id"`
+	Content  string    `json:"content"`
+	Author   Author    `json:"author"`
 	Comments []Comment `json:"comments"`
 }
 
 type Author struct {
-	Id int `json:"id"`
+	Id   int    `json:"id"`
 	Name string `json:"name"`
 }
 
 type Comment struct {
-	Id int `json:"id"`
+	Id      int    `json:"id"`
 	Content string `json:"content"`
-	Author string `json:"author"`
+	Author  string `json:"author"`
 }
 
 func decode(filename string) (post Post, err error) {
@@ -61,7 +61,7 @@ func unmarshal(filename string) (post Post, err error) {
 func fibonacciIterative(n int) int {
 	current, pre := 0, 1
 	for i := 0; i < n; i++ {
-		current, pre = current + pre, current
+		current, pre = current+pre, current
 	}
 	return current
 }
@@ -71,7 +71,7 @@ func fibonacciRecursive(n int) int {
 	if n < 2 {
 		return n
 	}
-	return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+	return fibonacciRecursive(n-1) + fibonacciRecursive(n-2)
 }
 
 func main() {
