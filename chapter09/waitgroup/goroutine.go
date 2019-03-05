@@ -13,7 +13,7 @@ func printNumber2(wg *sync.WaitGroup) {
 }
 
 func printLetters2(wg *sync.WaitGroup) {
-	for i := 'A'; i < 'A' + 10; i++ {
+	for i := 'A'; i < 'A'+10; i++ {
 		time.Sleep(1 * time.Microsecond)
 		fmt.Printf("%c ", i)
 	}

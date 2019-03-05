@@ -14,7 +14,7 @@ func thrower(ch chan int) {
 
 func catcher(ch chan int) {
 	for i := 0; i < 5; i++ {
-		num := <- ch
+		num := <-ch
 		fmt.Println("Caught <<", num)
 	}
 }

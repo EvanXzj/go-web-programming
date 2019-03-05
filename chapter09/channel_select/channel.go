@@ -23,11 +23,11 @@ func main() {
 	openA, openB := true, true
 	for openA || openB {
 		select {
-		case msg, openA = <- a:
+		case msg, openA = <-a:
 			if openA {
 				fmt.Println(msg)
 			}
-		case msg, openB = <- b:
+		case msg, openB = <-b:
 			if openB {
 				fmt.Println(msg)
 			}

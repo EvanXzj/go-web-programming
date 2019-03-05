@@ -12,7 +12,7 @@ func printNumbers1() {
 }
 
 func printLetters1() {
-	for i := 'A'; i < 'A' + 10; i++ {
+	for i := 'A'; i < 'A'+10; i++ {
 		// fmt.Printf("%c", i)
 	}
 }
@@ -25,7 +25,7 @@ func printNumbers2() {
 }
 
 func printLetters2() {
-	for i := 'A'; i < 'A' + 100; i++ {
+	for i := 'A'; i < 'A'+100; i++ {
 		time.Sleep(1 * time.Microsecond)
 		// fmt.Printf("%c", i)
 	}
